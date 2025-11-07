@@ -1,20 +1,74 @@
-<header class="bg-gray-900 text-white shadow-md">
-  <div class="container mx-auto flex justify-between items-center px-6 py-4">
-    <h1 class="text-2xl font-bold tracking-wide">Starfield</h1>
+<header
+  class="sticky top-0 z-50 backdrop-blur-md bg-[#f4f5f7]/70 border-b border-[#304c7a]/10"
+>
+  <div class="container-w flex items-center justify-between py-4">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 group">
+      <div
+        class="w-3.5 h-3.5 rounded-full bg-[#c72138] group-hover:bg-[#e06236] transition"
+      ></div>
+      <span
+        class="font-semibold tracking-widest text-[#304c7a] text-lg uppercase"
+        >Starfield</span
+      >
+    </a>
 
-    <nav>
-      <ul class="flex space-x-8 text-lg">
-        <li>
-          <a href="/" class="hover:text-yellow-400 transition-colors duration-300">Início</a>
-        </li>
-        <li>
-          <a href="/sobre/" class="hover:text-yellow-400 transition-colors duration-300">Sobre</a>
-        </li>
-        <li>
-          <a href="/contato/" class="hover:text-yellow-400 transition-colors duration-300">Contato</a>
-        </li>
-      </ul>
+    <!-- Navegação desktop -->
+    <nav class="hidden md:flex items-center gap-10 font-medium tracking-wide">
+      <a href="/" class="text-[#304c7a] hover:text-[#c72138] transition-colors"
+        >Início</a
+      >
+      <a
+        href="/sobre/"
+        class="text-[#304c7a] hover:text-[#c72138] transition-colors"
+        >Sobre</a
+      >
+      <a
+        href="/contato/"
+        class="text-[#304c7a] hover:text-[#c72138] transition-colors"
+        >Contato</a
+      >
+
+      <a
+        href="#explorar"
+        class="ml-2 px-5 py-2 rounded-full bg-[#304c7a] text-[#f4f5f7] font-semibold hover:bg-[#e06236] transition-all"
+      >
+        Explorar
+      </a>
     </nav>
-    
+
+    <!-- Mobile menu (dropdown) -->
+    <details class="md:hidden relative">
+      <summary
+        class="list-none p-2 rounded-lg text-[#304c7a] hover:bg-[#304c7a]/10 cursor-pointer text-xl leading-none"
+      >
+        ☰
+      </summary>
+      <div
+        class="absolute right-0 mt-2 w-44 bg-[#f4f5f7]/90 backdrop-blur-md rounded-xl p-3 text-sm shadow-md border border-[#304c7a]/10"
+      >
+        <a
+          href="/"
+          class="block px-3 py-2 rounded-md text-[#304c7a] hover:text-[#c72138] hover:bg-[#304c7a]/5 transition"
+          >Início</a
+        >
+        <a
+          href="/sobre/"
+          class="block px-3 py-2 rounded-md text-[#304c7a] hover:text-[#c72138] hover:bg-[#304c7a]/5 transition"
+          >Sobre</a
+        >
+        <a
+          href="/contato/"
+          class="block px-3 py-2 rounded-md text-[#304c7a] hover:text-[#c72138] hover:bg-[#304c7a]/5 transition"
+          >Contato</a
+        >
+        <a
+          href="#explorar"
+          class="block mt-3 text-center px-3 py-2 rounded-full bg-[#c72138] hover:bg-[#e06236] text-white font-semibold transition"
+        >
+          Explorar
+        </a>
+      </div>
+    </details>
   </div>
 </header>

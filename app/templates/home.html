@@ -1,10 +1,241 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block title %}Exploração Espacial
+— Starfield{% endblock %} {% block content %}
 
-{% block title %}Início - Starfield{% endblock %}
+<!-- HERO -->
+<section class="container-w mt-10">
+  <div class="relative overflow-hidden rounded-3xl">
+    <video
+      id="heroVideo"
+      class="w-full h-[420px] md:h-[520px] object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+      <track kind="captions" />
+      <source
+        src="https://videos.ctfassets.net/rporu91m20dc/4Ko5NigSluCINZqVj0LRDl/5fd21b517a3795574720cdb4e4a0fa60/Starfield_Launch_Bnet_Gameplay_1920x650-01.mp4"
+        type="video/mp4"
+      />
+      <source
+        src="https://videos.ctfassets.net/rporu91m20dc/Gm6A7MXe1PoG2gOX67zMC/c435a7970a824b84b16a842be860703f/Starfield_Launch_Bnet_Gameplay_1920x650-01.webm"
+        type="video/webm"
+      />
+    </video>
 
-{% block content %}
-  <h2 class="text-3xl font-bold mb-4">Bem-vindo ao universo Starfield 🚀</h2>
-  <p class="text-lg leading-relaxed">
-    Explore o espaço, descubra novos mundos e viva uma aventura sem limites.
-  </p>
+    <div
+      class="pointer-events-none absolute inset-0"
+      style="
+        background: linear-gradient(
+            180deg,
+            rgba(48, 76, 122, 0.08) 0%,
+            rgba(48, 76, 122, 0.55) 60%,
+            rgba(12, 20, 35, 0.85) 100%
+          ),
+          radial-gradient(
+            600px 300px at 85% -10%,
+            rgba(224, 98, 54, 0.35),
+            transparent 60%
+          );
+      "
+    ></div>
+
+    <!-- Conteúdo -->
+    <div class="absolute inset-0 flex items-center">
+      <div class="px-8 md:px-12 w-full">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full"
+          style="
+            backdrop-filter: saturate(120%) blur(6px);
+            background: rgba(244, 245, 247, 0.15);
+            color: #f4f5f7;
+          "
+        >
+          <span
+            class="inline-block w-2 h-2 rounded-full"
+            style="background: #d7a64b"
+          ></span>
+          Já disponível
+        </div>
+
+        <h1
+          class="mt-5 text-4xl md:text-5xl font-extrabold leading-tight tracking-tight max-w-3xl"
+          style="color: #f4f5f7"
+        >
+          Descubra o desconhecido. Vá além do horizonte.
+        </h1>
+
+        <p class="mt-4 max-w-2xl" style="color: rgba(244, 245, 247, 0.9)">
+          Vídeos demonstrativos de exploração espacial, rotas estelares e
+          ambientes remotos — uma vitrine imersiva da nova era de pesquisa
+          interplanetária.
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <button
+            id="toggleVideo"
+            type="button"
+            aria-pressed="true"
+            class="rounded-full px-4 py-2 transition"
+            style="color: #f4f5f7; border: 1px solid rgba(244, 245, 247, 0.25)"
+          >
+            Pausar vídeo
+          </button>
+
+          <a
+            href="#trailer"
+            class="rounded-full px-5 py-2 font-semibold transition"
+            style="background: #e06236; color: #f4f5f7"
+          >
+            Assistir ao trailer de jogabilidade
+          </a>
+
+          <a
+            href="/get-starfield"
+            class="rounded-full px-5 py-2 font-semibold transition"
+            style="background: #c72138; color: #f4f5f7"
+          >
+            Comprar agora
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES (cards melhorados) -->
+<section id="explorar" class="container-w py-20">
+  <div class="grid gap-8 md:grid-cols-3">
+    <!-- CARD 1 -->
+    <article
+      class="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-500 border border-[#f4f5f7]/70"
+    >
+      <div class="p-8 relative z-10">
+        <div class="flex items-center gap-2 mb-3">
+          <span
+            class="inline-block w-2.5 h-2.5 rounded-full bg-[#d7a64b]"
+          ></span>
+          <h3 class="text-lg font-semibold text-[#304c7a] tracking-tight">
+            Cartografia Estelar
+          </h3>
+        </div>
+        <p class="text-[#41536d] leading-relaxed">
+          Mapeamento de rotas, órbitas e superfícies com dados integrados e
+          visualização em tempo real.
+        </p>
+        <a
+          href="#"
+          class="inline-flex items-center gap-2 mt-6 font-medium text-[#c72138] group-hover:gap-3 transition-all"
+        >
+          Ver detalhes →
+        </a>
+      </div>
+      <div
+        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
+        style="background: linear-gradient(135deg, #f4f5f7 0%, #e06236 180%)"
+      ></div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article
+      class="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-500 border border-[#f4f5f7]/70"
+    >
+      <div class="p-8 relative z-10">
+        <div class="flex items-center gap-2 mb-3">
+          <span
+            class="inline-block w-2.5 h-2.5 rounded-full bg-[#e06236]"
+          ></span>
+          <h3 class="text-lg font-semibold text-[#304c7a] tracking-tight">
+            Pesquisa Ambiental
+          </h3>
+        </div>
+        <p class="text-[#41536d] leading-relaxed">
+          Analise atmosfera, gravidade, clima e recursos para missões seguras e
+          eficientes.
+        </p>
+        <a
+          href="#"
+          class="inline-flex items-center gap-2 mt-6 font-medium text-[#c72138] group-hover:gap-3 transition-all"
+        >
+          Ver detalhes →
+        </a>
+      </div>
+      <div
+        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
+        style="background: linear-gradient(135deg, #f4f5f7 0%, #304c7a 180%)"
+      ></div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article
+      class="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-500 border border-[#f4f5f7]/70"
+    >
+      <div class="p-8 relative z-10">
+        <div class="flex items-center gap-2 mb-3">
+          <span
+            class="inline-block w-2.5 h-2.5 rounded-full bg-[#304c7a]"
+          ></span>
+          <h3 class="text-lg font-semibold text-[#304c7a] tracking-tight">
+            Missões Automatizadas
+          </h3>
+        </div>
+        <p class="text-[#41536d] leading-relaxed">
+          Orquestre coletas, telemetria e relatórios com confiabilidade e escala
+          interplanetária.
+        </p>
+        <a
+          href="#"
+          class="inline-flex items-center gap-2 mt-6 font-medium text-[#c72138] group-hover:gap-3 transition-all"
+        >
+          Ver detalhes →
+        </a>
+      </div>
+      <div
+        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
+        style="background: linear-gradient(135deg, #f4f5f7 0%, #d7a64b 180%)"
+      ></div>
+    </article>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="saiba-mais" class="container-w pb-20">
+  <div
+    class="rounded-3xl p-10 md:p-14 text-center"
+    style="
+      color: #f4f5f7;
+      background: linear-gradient(135deg, #304c7a 0%, #1d2f4d 65%),
+        radial-gradient(
+          450px 220px at 85% -10%,
+          rgba(224, 98, 54, 0.35),
+          transparent 60%
+        );
+    "
+  >
+    <h3 class="text-2xl md:text-3xl font-bold">
+      Pronto para a próxima janela de lançamento?
+    </h3>
+    <p class="mt-3 max-w-2xl mx-auto" style="color: rgba(244, 245, 247, 0.9)">
+      Conecte sua equipe, defina objetivos e avance com segurança em cada etapa
+      da sua jornada espacial.
+    </p>
+    <div class="mt-6 flex justify-center gap-3">
+      <a
+        href="/contato/"
+        class="px-5 py-3 rounded-full font-semibold transition"
+        style="background: #c72138; color: #f4f5f7"
+      >
+        Falar com a equipe
+      </a>
+      <a
+        href="#"
+        class="px-5 py-3 rounded-full border transition"
+        style="border-color: rgba(244, 245, 247, 0.3); color: #f4f5f7"
+      >
+        Ver documentação
+      </a>
+    </div>
+  </div>
+</section>
 {% endblock %}
